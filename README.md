@@ -7,7 +7,7 @@ This is a manual to give nice colors to your tree point cloud using CloudCompare
 
 ![example](./img/0_example_Louise.gif)
 
-* Example from using big trees:
+* Example from (insert link to future paper) using big trees:
 
 ![example](./img/0_example_Barbara.png)
 
