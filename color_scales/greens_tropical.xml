@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>greens_tropical</name>
+            <uuid>{d419cf06-964f-4af1-8a37-38a468ff1aff}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="11" g="36" b="3" pos="0"/>
+            <step r="39" g="126" b="85" pos="0.239035087719"/>
+            <step r="87" g="177" b="81" pos="0.570175438596"/>
+            <step r="223" g="243" b="124" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

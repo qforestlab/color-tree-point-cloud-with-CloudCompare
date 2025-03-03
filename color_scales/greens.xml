@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>greens</name>
+            <uuid>{4912a5b9-0cc3-4213-995d-b1882e6b709b}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="0" g="33" b="0" pos="0"/>
+            <step r="143" g="195" b="128" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

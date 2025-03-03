@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>eucface_green</name>
+            <uuid>{ab17c010-9fb0-4ae5-a3d5-90347ff447e3}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="61" g="75" b="38" pos="0"/>
+            <step r="131" g="147" b="48" pos="0.352813852814"/>
+            <step r="178" g="171" b="107" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

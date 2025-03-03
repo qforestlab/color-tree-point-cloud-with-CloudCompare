@@ -1,0 +1,101 @@
+---
+title: "Visualise a tree colored with CloudCompare and ShadeVis"
+output: html_notebook
+---
+
+# one leaf-off tree
+```{r}
+#load library lidR to read in LAS file
+library(lidR)
+library(ggplot2)
+
+#import your tree point cloud
+cloud_name <- "2024-12-03_ForSe_Gontrode_1cm_BE001_S25"
+cloud <- readLAS(file = paste0("C:/Users/lmterryn/OneDrive - UGent/ForSe/TLS_Gontrode/03_processing/point_clouds/BE001_S25/", cloud_name, ".las"))
+
+#put the RGB as rgb colors
+pcs <- cloud@data
+pcs$color <- rgb(pcs$R/256,pcs$G/256,pcs$B/256, maxColorValue = 256)
+
+#normalise point cloud
+pcs$Z <- pcs$Z - min_z
+
+#Start making the figure
+p <- ggplot() + #,color = "#252525"
+  scale_color_identity() +
+  coord_fixed() +
+  theme_classic() +
+  xlim(5,20) +
+  ylim(0,26) +
+  ggtitle(strsplit(cloud_name,"_")[[1]][1])
+
+#plot the points in the back first
+xlen <- (max(pcs$X)-min(pcs$X))/10
+for (i in 1:10){
+  xthresh <- min(pcs$X) + i*xlen
+  Xdata <- pcs[pcs$X<xthresh,]
+  p <- p +
+    geom_point(data = Xdata, aes(x = Y, y = Z, color = color),
+               shape = 16, size = 0.05, alpha = 0.2) 
+}
+
+#visualise the plot
+p
+
+#save the plot
+ggsave(filename = paste0("C:/Users/lmterryn/OneDrive - UGent/ForSe/TLS_Gontrode/03_processing/", cloud_name, ".png"), plot = p, width = 5, height = 7)
+```
+
+# one leaf-on tree
+```{r}
+#load library lidR to read in LAS file
+library(lidR)
+library(ggplot2)
+
+#import your wood & leaf point cloud
+cloud_name <- "2024-07-08_ForSe_Gontrode_1cm_BE001_S25"
+cloud_w <- readLAS(file = paste0("C:/Users/lmterryn/OneDrive - UGent/ForSe/TLS_Gontrode/03_processing/point_clouds/BE001_S25/", cloud_name, "_wood.las"))
+cloud_l <- readLAS(file = paste0("C:/Users/lmterryn/OneDrive - UGent/ForSe/TLS_Gontrode/03_processing/point_clouds/BE001_S25/", cloud_name, "_leaf.las"))
+
+
+#put the RGB as rgb colors
+pcs_w <- cloud_w@data
+pcs_w$color <- rgb(pcs_w$R/256,pcs_w$G/256,pcs_w$B/256, maxColorValue = 256)
+
+pcs_l <- cloud_l@data
+pcs_l$color <- rgb(pcs_l$R/256,pcs_l$G/256,pcs_l$B/256, maxColorValue = 256)
+
+#minimum Z
+pcs_w$Z <- pcs_w$Z - min_z
+pcs_l$Z <- pcs_l$Z - min_z
+
+#Start making the figure
+p <- ggplot() + #,color = "#252525"
+  scale_color_identity() +
+  coord_fixed() +
+  theme_classic() +
+  xlim(5,20) +
+  ylim(0,26) +
+  ggtitle(strsplit(cloud_name,"_")[[1]][1])
+
+#plot the points in the back first
+xlen_w <- (max(pcs_w$X)-min(pcs_w$X))/10
+xlen_l <- (max(pcs_l$X)-min(pcs_l$X))/10
+for (i in 1:10){
+  xthresh_l <- min(pcs_l$X) + i*xlen_l
+  Xdata_l <- pcs_l[pcs_l$X<xthresh_l,]
+  Xdata_w <- pcs_w[pcs_w$X<xthresh_l,]
+  p <- p +
+    geom_point(data = Xdata_l, aes(x = Y, y = Z, color = color),
+               shape = 16, size = 0.05, alpha = 0.2) +
+    geom_point(data = Xdata_w, aes(x = Y, y = Z, color = color),
+               shape = 16, size = 0.05, alpha = 0.2)
+}
+
+
+#visualise the plot
+p
+
+#save the plot
+ggsave(filename = paste0("C:/Users/lmterryn/OneDrive - UGent/ForSe/TLS_Gontrode/03_processing/", cloud_name, ".png"), plot = p, width = 5, height = 7)
+```

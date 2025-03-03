@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>eucalypt green</name>
+            <uuid>{a80533e8-d092-4784-afc3-aa9042831bf3}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="25" g="51" b="8" pos="0"/>
+            <step r="121" g="173" b="121" pos="0.573593073593"/>
+            <step r="154" g="214" b="166" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

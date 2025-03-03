@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>stembrown_greytwigs</name>
+            <uuid>{5ae35294-5a48-4aa8-9f5c-f3eb580d596d}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="67" g="59" b="13" pos="0"/>
+            <step r="145" g="145" b="102" pos="0.482683982684"/>
+            <step r="232" g="231" b="228" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>

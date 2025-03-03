@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CloudCompare>
+    <ColorScale version="1">
+        <Properties>
+            <name>stem_eucface</name>
+            <uuid>{f99da2c2-4f9b-4b5d-a73e-9688cc9edaca}</uuid>
+            <absolute>0</absolute>
+        </Properties>
+        <Data>
+            <step r="111" g="90" b="74" pos="0"/>
+            <step r="58" g="52" b="44" pos="0.829004329004"/>
+            <step r="133" g="122" b="110" pos="1"/>
+        </Data>
+    </ColorScale>
+</CloudCompare>
